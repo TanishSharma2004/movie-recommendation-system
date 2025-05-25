@@ -3,7 +3,6 @@ Overview
 This project is a content-based movie recommendation system built using Python, Streamlit, and the TMDB 5000 Movie Dataset. It recommends movies similar to a user-selected title by analyzing metadata (genres, cast, keywords, etc.) using TF-IDF vectorization and cosine similarity. The Netflix-style web interface, deployed on Render, includes features like theme toggling, profile-based filtering (Kids/Adult), a watchlist, a random movie picker, trending movies, and a chatbot-like filtering system. The system fetches real-time movie details and posters via the TMDB API.
 Developed by Tanish Sharma and Anshu Jain under the supervision of Dr. Rinky Ahuja at Sushant University, May 2025.
 Features
-
 Content-Based Recommendations: Suggests 10 movies similar to the user’s selection based on metadata.
 Netflix-Style UI: Built with Streamlit, featuring:
 Theme toggling (Default, Dark, Light).
@@ -13,8 +12,6 @@ Watchlist: Add/remove movies, rate (0–10), add notes, and export as CSV.
 Random Movie Picker: Suggests a movie respecting filters.
 Trending Movies: Displays weekly trends from TMDB API in a 5-column grid.
 Chatbot-Like Filtering: Filters by genre, cast, or release year in a 3-column grid.
-
-
 TMDB API Integration: Fetches real-time posters, overviews, ratings, and trailers.
 Optimized Performance: Uses sparse matrices to reduce memory usage (~70 MB vs. ~180 MB).
 Deployment: Hosted on Render with code on GitHub.
@@ -26,26 +23,17 @@ Clone the Repository:
 git clone https://github.com/TanishSharma2004/movie-recommendation-system.git
 cd movie-recommendation-system
 
-
 Install Dependencies: Ensure Python 3.9 is installed. Then, install required libraries:
 pip install -r requirements.txt
 
-
 Set Up TMDB API Key:
-
 Obtain an API key from TMDB.
 Add it as an environment variable:export TMDB_API_KEY='your-api-key'
-
-
-
 
 Run the Streamlit App:
 streamlit run app.py
 
-
-
 Requirements
-
 Python 3.9
 Libraries (listed in requirements.txt):
 streamlit
@@ -55,19 +43,16 @@ requests
 pickle
 scipy
 
-
 Dataset: TMDB 5000 Movie Dataset (tmdb_5000_movies.csv, tmdb_5000_credits.csv)
 Tools: Git, Visual Studio Code or PyCharm, Mermaid Live Editor
 
 Usage
-
 Open the app in your browser (default: http://localhost:8501).
 Select a movie from the dropdown to get 10 similar movie recommendations.
 Use the sidebar to:
 Toggle themes (Default, Dark, Light).
 Choose a profile (Kids or Adult).
 Filter by genre or release year.
-
 
 Add movies to the watchlist, rate them, and add notes. Export as CSV.
 Use the random movie picker or chatbot popup to filter by genre, cast, or year.
@@ -83,10 +68,7 @@ Resolved 5 duplicates and 12 missing entries.
 Extracted genres, top 3 cast, director, keywords, and overview into a tags column.
 Saved as movie_data.pkl (~2.5 MB).
 
-
-
 Model Building
-
 TF-IDF Vectorization: Converted tags into a sparse matrix (~4803 × 20,000 features) using scikit-learn.
 Cosine Similarity: Computed a 4803 × 4803 matrix using sklearn.metrics.pairwise.cosine_similarity.
 Optimization: Used scipy.sparse.csr_matrix to reduce memory from ~180 MB to ~70 MB.
@@ -98,26 +80,20 @@ UI Components:
 Custom CSS for Netflix-style look (e.g., #e50914 buttons, hover effects).
 TMDB API integration with caching (@st.cache_data).
 
-
 Deployment:
 Hosted on Render with GitHub integration.
 Configured with requirements.txt and streamlit run app.py --server.port $PORT.
 
-
-
 Implementation Challenges
-
 API Rate Limits: TMDB’s 40 requests/10s limit handled with caching and retry logic.
 Session State: Fixed Streamlit UI reruns using explicit st.session_state initialization.
 CSS Conflicts: Overrode Streamlit’s default styles with targeted selectors and !important.
 File Size: Reduced movie_data.pkl from 186.31 MB to ~70 MB to meet GitHub’s 100 MB limit.
 
 Experimental Results
-
 Recommendation Accuracy:
 Tested with movies like Harry Potter (8/10 recommendations from the same franchise or fantasy genre) and The Dark Knight.
 Kids mode correctly showed Animation films like Toy Story.
-
 
 Performance:
 Initial app load: ~3s.
@@ -125,12 +101,10 @@ Recommendation generation: ~1s.
 Memory savings: 61% with sparse matrix.
 Stable for ~50 concurrent users on Render.
 
-
 UI Feedback: Rated 4.5/5 by three test users, suggesting faster API responses and larger posters.
 Limitations: Accuracy depends on metadata quality; sparse overviews may reduce similarity scores.
 
 Future Scope
-
 Add collaborative filtering for hybrid recommendations.
 Expand to books, songs, or TV shows.
 Implement a conversational chatbot with NLP for natural language queries.
@@ -176,4 +150,6 @@ Acknowledgments
 Dr. Rinky Ahuja for guidance.
 TMDB for providing the dataset and API.
 Streamlit and Render for enabling easy development and deployment.
-
+![WhatsApp Image 2025-05-25 at 6 44 19 PM](https://github.com/user-attachments/assets/e9bc8550-fa36-4397-9a28-675514702119)
+![WhatsApp Image 2025-05-25 at 6 41 40 PM](https://github.com/user-attachments/assets/2bc59af0-bb91-4d7a-b805-c6c07063c6aa)
+![WhatsApp Image 2025-05-25 at 6 49 10 PM](https://github.com/user-attachments/assets/83f64369-026b-4d38-998c-9389b989f55e)
