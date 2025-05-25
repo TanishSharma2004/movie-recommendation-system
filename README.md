@@ -19,19 +19,19 @@ Deployment: Hosted on Render with code on GitHub.
 ## Installation
 To run the project locally, follow these steps:
 
-### Clone the Repository:
+### 1. Clone the Repository:
 git clone https://github.com/TanishSharma2004/movie-recommendation-system.git
 cd movie-recommendation-system
 
-### Install Dependencies:
+### 2. Install Dependencies:
 Ensure Python 3.9 is installed. Then, install required libraries:
 pip install -r requirements.txt
 
-### Set Up TMDB API Key:
+### 3. Set Up TMDB API Key:
 Obtain an API key from TMDB.
 Add it as an environment variable:export TMDB_API_KEY='your-api-key'
 
-### Run the Streamlit App:
+### 4. Run the Streamlit App:
 streamlit run app.py
 
 ## Requirements
@@ -106,7 +106,7 @@ Stable for ~50 concurrent users on Render.
 Rated 4.5/5 by three test users, suggesting faster API responses and larger posters.
 Limitations: Accuracy depends on metadata quality; sparse overviews may reduce similarity scores.
 
-### Future Scope
+## Future Scope
 Add collaborative filtering for hybrid recommendations.
 Expand to books, songs, or TV shows.
 Implement a conversational chatbot with NLP for natural language queries.
